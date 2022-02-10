@@ -9,11 +9,17 @@ Cidade
 
 ORG
 
+ASN
+
 ISP
 
 Coordenadas
 
 DDD
+
+Timezone
+
+Taxa de câmbio 
 
 E outras Informações
 
