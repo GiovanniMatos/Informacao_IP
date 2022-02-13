@@ -24,9 +24,15 @@ Taxa de câmbio
 E outras Informações
 
 -------------------------
+
+💻 IP para Teste:
+-----
+200.160.2.95
+
+
 💻 Instalação:
 -----
-Linux:
+🐧💻Linux:
 
 apt-get install python3
 
@@ -36,8 +42,21 @@ pip install requests
 
 git clone https://github.com/GiovanniMatos/Kira_Tracker.git
 
+cd Kira_Tracker
+
 python3 Kira_Tracker.py
 
-💻 IP para Teste:
------
-200.160.2.95
+
+🐧📱Termux:
+
+pkg install python
+
+pkg install git
+
+pip install requests
+
+git clone https://github.com/GiovanniMatos/Kira_Tracker.git
+
+cd Kira_Tracker
+
+python Kira_Tracker.py
