@@ -41,5 +41,4 @@ print("\033[36m Requisicoes Concluidas:\033[0;0m      {}".format(request['comple
 print("\033[36m Proxy:\033[0;0m                       Unknown")
 print("""
 
-contato: kira0666@protonmail.com
 """)
