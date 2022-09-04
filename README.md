@@ -34,9 +34,9 @@ E outras Informações
 -----
 🐧💻Linux:
 
-apt-get install python3
+apt install python3
 
-apt-get install git
+apt install git
 
 pip install requests
 
