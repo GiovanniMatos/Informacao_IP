@@ -1,5 +1,5 @@
 # Rastreador de IP
-💻 Coleta Informativa de IP
+ Coleta Informativa de IP
 
 Continente
 
