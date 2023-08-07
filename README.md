@@ -1,25 +1,7 @@
-# Rastreador de IP
- Coleta Informativa de IP
+# Informação de IP (API)
+Coleta Informativa de IP
 
-Continente
-
-País
-
-Cidade
-
-ORG
-
-ASN
-
-ISP
-
-Coordenadas
-
-DDD
-
-Timezone
-
-Taxa de câmbio 
+Continente, País, Cidade, ORG, ASN, ISP, Coordenadas, DDD, Timezone, Taxa de câmbio 
 
 E outras Informações
 
