@@ -1,4 +1,4 @@
-# Informação de IP (API)
+# Informação de IP (API) 🧭
 Coleta Informativa de IP
 
 Continente, País, Cidade, ORG, ASN, ISP, Coordenadas, DDD, Timezone, Taxa de câmbio 
