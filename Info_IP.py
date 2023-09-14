@@ -1,5 +1,8 @@
 import requests
+import folium
+import os
 api = "https://ipwhois.app/json/"
+
 
 print('''\033[31m
  _____               _             
@@ -11,35 +14,50 @@ print('''\033[31m
                                                                                                                        
 ''')
 ip = input("\033[31m-----> IP:\033[31m ")
+marcador = input("Nome da sessão (opcional): ")
 
 request = requests.get(api + ip).json()
-print("\033[36m [+]Endereco IP:\033[0;0m              {}".format(request['ip']))
-print("\033[36m Ativo:\033[0;0m                       {}".format(request['success']))
-print("\033[36m Tipo:\033[0;0m                        {}".format(request['type']))
-print("\033[36m Continente:\033[0;0m                  {}".format(request['continent']))
-print("\033[36m Codigo do Continente:\033[0;0m        {}".format(request['continent_code']))
-print("\033[36m País:\033[0;0m                        {}".format(request['country']))
-print("\033[36m Codigo do País:\033[0;0m              {}".format(request['country_code']))
-print("\033[36m Bandeira:\033[0;0m                    {}".format(request['country_flag']))
-print("\033[36m Capital:\033[0;0m                     {}".format(request['country_capital']))
-print("\033[36m DDD:\033[0;0m                         {}".format(request['country_phone']))
-print("\033[36m Países Vizinhos:\033[0;0m             {}".format(request['country_neighbours']))
-print("\033[36m Cidade:\033[0;0m                      {}".format(request['city']))
-print("\033[36m Latitude:\033[0;0m                    {}".format(request['latitude']))
-print("\033[36m Longitude:\033[0;0m                   {}".format(request['longitude']))
-print("\033[36m ASN:\033[0;0m                         {}".format(request['asn']))
-print("\033[36m ORG:\033[0;0m                         {}".format(request['org']))
-print("\033[36m ISP:\033[0;0m                         {}".format(request['isp']))
-print("\033[36m Fuso Horario:\033[0;0m                {}".format(request['timezone_name']))
-print("\033[36m Fuso Horario DST Offset:\033[0;0m     {}".format(request['timezone_dstOffset']))
-print("\033[36m Fuso Horario GMT Offset:\033[0;0m     {}".format(request['timezone_gmtOffset']))
-print("\033[36m F H GMT:\033[0;0m                     {}".format(request['timezone_gmt']))
-print("\033[36m Codigo da Moeda:\033[0;0m             {}".format(request['currency_code']))
-print("\033[36m Simbolo da Moeda:\033[0;0m            {}".format(request['currency_symbol']))
-print("\033[36m Taxa de Cambio:\033[0;0m              {}".format(request['currency_rates']))
-print("\033[36m Moeda:\033[0;0m                       {}".format(request['currency_plural']))
-print("\033[36m Requisicoes Concluidas:\033[0;0m      {}".format(request['completed_requests']))
-print("\033[36m Proxy:\033[0;0m                       Unknown")
-print("""
 
-""")
+
+print(f"""
+\033[36m [+]Endereco IP:\033[0;0m              {request['ip']}
+\033[36m Ativo:\033[0;0m                       {request['success']} 
+\033[36m Tipo:\033[0;0m                        {request['type']}   
+\033[36m Continente:\033[0;0m                  {request['continent']}
+\033[36m Codigo do Continente:\033[0;0m        {request['continent_code']}
+\033[36m País:\033[0;0m                        {request['country']}
+\033[36m Codigo do País:\033[0;0m              {request['country_code']}
+\033[36m Bandeira:\033[0;0m                    {request['country_flag']}
+\033[36m Capital:\033[0;0m                     {request['country_capital']}
+\033[36m DDD:\033[0;0m                         {request['country_phone']}
+\033[36m Países Vizinhos:\033[0;0m             {request['country_neighbours']}
+\033[36m Cidade:\033[0;0m                      {request['city']}
+\033[36m Latitude:\033[0;0m                    {request['latitude']}
+\033[36m Longitude:\033[0;0m                   {request['longitude']}
+\033[36m ASN:\033[0;0m                         {request['asn']}
+\033[36m ORG:\033[0;0m                         {request['org']}
+\033[36m ISP:\033[0;0m                         {request['isp']}
+\033[36m Fuso Horario:\033[0;0m                {request['timezone_name']}
+\033[36m Fuso Horario DST Offset:\033[0;0m     {request['timezone_dstOffset']}
+\033[36m Fuso Horario GMT Offset:\033[0;0m     {request['timezone_gmtOffset']}
+\033[36m F H GMT:\033[0;0m                     {request['timezone_gmt']}
+\033[36m Codigo da Moeda:\033[0;0m             {request['currency_code']}
+\033[36m Simbolo da Moeda:\033[0;0m            {request['currency_symbol']}
+\033[36m Taxa de Cambio:\033[0;0m              {request['currency_rates']}
+\033[36m Moeda:\033[0;0m                       {request['currency_plural']}""")
+
+latitude = request['latitude']
+longitude = request['longitude']
+mymap = folium.Map(location=[latitude, longitude], zoom_start=12)
+
+# marca a localização das coordenadas no mapa
+folium.Marker([latitude, longitude], tooltip=marcador).add_to(mymap)
+mymap.save('mapa.html')
+abrir = input("\nAbrir no mapa? (S/N): ")
+if abrir == "s" or abrir == 'S':
+  os.system('mapa.html')
+elif abrir == "n" or abrir == 'N':
+  exit
+else:
+  exit
+  
