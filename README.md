@@ -11,4 +11,6 @@ E outras Informações
 -----
 200.160.2.95 
 
-
+-------------------------
+pip install folium
+pip install requests
