@@ -10,10 +10,18 @@ Possui também a opção de abrir a localização em um Mapa no navegador.
 💻 IP para Teste: <br> 200.160.2.95 
 
 -------
-pip install requests folium<br>
-
-python Info_IP.py <br>
-
+```bash
+  git clone https://github.com/GiovanniMatos/Informacao_IP.git
+```
+```bash
+  cd Informacao_IP
+```
+```bash
+  pip install requests folium
+```
+```bash
+  python Info_IP.py
+```
 ------------------------
 ![image](https://github.com/GiovanniMatos/Informacao_IP/assets/99231397/d007e5d8-4f58-4c33-bbf1-6a8ddcd9d280)
 ![b](https://github.com/GiovanniMatos/Informacao_IP/assets/99231397/b228608b-48fe-47bd-aaf9-783e664f9d33)
