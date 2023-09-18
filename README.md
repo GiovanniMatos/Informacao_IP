@@ -10,6 +10,7 @@ Possui também a opção de abrir a localização em um Mapa no navegador.
 💻 IP para Teste: <br> 200.160.2.95 
 
 -------
+<b>Instalação</b>
 ```bash
   git clone https://github.com/GiovanniMatos/Informacao_IP.git
 ```
